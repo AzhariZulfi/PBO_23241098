@@ -30,18 +30,18 @@ class Hitung_Gaji_Bersih{
 
     //getter pajak
     public double getPajak(){
-        return pajak;
+        double TotalPajak = (gaji_pokok + tunjangan) * pajak / 100;
+        return TotalPajak;
     }
 
     //menghitung gaji bersih
     public double RumusGajiBersih(){
-        double TotalPajak = (gaji_pokok + tunjangan) * (pajak / 100);
-        return (gaji_pokok + tunjangan) - TotalPajak;
+        return (gaji_pokok + tunjangan) - getPajak();
     }
 
     //mencetak gaji bersih
     void cetak(){
-        System.out.println("Gaji bersih anda adalah sebesar :" + RumusGajiBersih());
+        System.out.println("Gaji bersih anda adalah sebesar : Rp." + RumusGajiBersih());
     }
 }
 
